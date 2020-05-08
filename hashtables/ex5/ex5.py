@@ -1,8 +1,13 @@
 def finder(files, queries):
-
-    """
-    YOUR CODE HERE
-    """
+    cache = {}
+    for q in queries: 
+        cache[q]=True
+        
+    result = []
+    
+    for path in files:
+        if path.split("/")[-1] in cache:
+            result.append(path)
 
     return result
 
